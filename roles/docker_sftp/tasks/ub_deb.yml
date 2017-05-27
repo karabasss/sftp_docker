@@ -1,0 +1,7 @@
+---
+
+  - name: Ensure wget installed
+    apt: name=wget state=present
+
+  - name: Install Docker Ubuntu/Debian
+    shell: cd /usr/local/src && wget -qO- https://get.docker.com/ | sh 

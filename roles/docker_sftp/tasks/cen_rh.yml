@@ -1,0 +1,8 @@
+---
+
+  - name: Ensure curl installed
+    yum: name=curl state=present update_cache=yes
+
+  - name: Install docker centos/rh
+    shell: curl -fsSL https://get.docker.com/ | sh
+
