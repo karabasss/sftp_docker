@@ -11,10 +11,15 @@ $ ./start.sh
 
 
 Script supports only yum and apt systems.
+
 You must have sudo rights.
+
 SFTP port = 2222
+
 username = impraise
+
 password = impraise
+
 upload dir = /opt/upload
 
 
