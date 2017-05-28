@@ -1,7 +1,32 @@
 SFTP watcher
+============
 
-To start run start.sh
+# To start run 
+
+```sh
+$ git clone https://github.com/karabasss/sftp_docker.git
+$ cd sftp_docker
+$ ./start.sh
+```
 
 
 Script supports only yum and apt systems.
 You must have sudo rights
+
+
+Logic is as follows:
+
+ > start.sh: 
+   - installs python-pip
+   - installs ansible
+   - runs ansible-playbook "docker.yml"
+ > ansible: 
+   - installs wget
+   - installs docker (starts and enables it)
+   - installs docker-py
+   - creates upload dir
+   - runs docker container with SFTP
+   - removes old listener container (if exists)
+   - builds listener container with dockerfile "listener.df"
+ > start.sh: 
+   - run listener container
