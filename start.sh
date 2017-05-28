@@ -17,3 +17,4 @@ sudo pip install markupsafe
 sudo pip install ansible
 ansible-playbook docker.yml
 
+docker run -v /opt/upload:/opt/upload -it listener:latest
