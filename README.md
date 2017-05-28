@@ -12,7 +12,7 @@ $ ./start.sh
 
 Script supports only yum and apt systems.
 
-You must have sudo rights.
+You must have sudo rights and git installed.
 
 SFTP port = 2222
 
