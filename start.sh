@@ -16,6 +16,7 @@ else
 fi
 
 sudo pip install --upgrade pip
+sudo pip install --upgrade setuptools
 sudo pip install cryptography
 sudo pip install markupsafe
 sudo pip install ansible
