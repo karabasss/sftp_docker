@@ -5,7 +5,6 @@ APT_CMD=$(which apt)
 
 if [[ ! -z $YUM_CMD ]]; then
      sudo yum update -y
-     sudo yum install -y epel-release.noarch
      sudo yum install -y python-pip gcc libffi-devel python-devel openssl-devel
 elif [[ ! -z $APT_CMD ]]; then
      sudo apt update -y
