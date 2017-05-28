@@ -25,7 +25,7 @@ upload dir = /opt/upload
 
 
 
-Logic is as follows:
+# Logic is as follows:
 
  > start.sh: 
    - installs python-pip
