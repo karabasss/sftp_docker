@@ -16,7 +16,7 @@ $ ./start.sh
 
 Script supports only yum and apt systems.
 
-You must have sudo rights and git installed (and possibly it's also needed to add epel repository (for Centos/RH) and yum/apt update, if system is brend new).
+You must have sudo rights and git installed (and it's also needed to add epel repository (for Centos/RH), if system is brend new).
 
 SFTP port = 2222
 
