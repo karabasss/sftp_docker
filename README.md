@@ -1,8 +1,8 @@
 SFTP watcher
 ============
 
-*tested on Ubuntu14 & RedHat7 systems,
-also should work on Debian8, Ubuntu16, Centos7*
+*tested on Ubuntu14/16 & RedHat7 systems,
+also should work on Debian8, Centos7*
 
 
 # To start, run:
