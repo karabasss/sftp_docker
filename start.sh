@@ -4,9 +4,9 @@ YUM_CMD=$(which yum)
 APT_CMD=$(which apt)
 
 if [[ ! -z $YUM_CMD ]]; then
-    sudo yum install -y python-pip
+     sudo yum install -y python-pip gcc libffi-devel python-devel openssl-devel
 elif [[ ! -z $APT_CMD ]]; then
-    sudo apt install -y python-pip  
+     sudo apt install -y python-pip build-essential libssl-dev libffi-dev python-dev  
 
 else
     echo "error, script supports only yum and apt"
