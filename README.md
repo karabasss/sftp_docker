@@ -1,7 +1,7 @@
 SFTP watcher
 ============
 
-# To start run:
+# To start, run:
 
 ```sh
 $ git clone https://github.com/karabasss/sftp_docker.git
