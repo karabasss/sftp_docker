@@ -8,10 +8,11 @@
     include: cen_rh.yml
     when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' 
 
-  - name: Install docker-py
+  - name: Install docker-py & watchdog for script tests
     pip: name={{ item }} state=latest
     with_items:
       - docker-py
+      - watchdog
 
   - name: Start Docker
     service: name=docker state=restarted enabled=yes
@@ -22,6 +23,10 @@
   - name: Run docker SFTP server
     shell: docker run -p 2222:22 -v /opt/upload:/home/impraise/upload -d atmoz/sftp impraise:impraise
 
+  - name: Remove listener images (if exist) for dev purposes
+    shell: docker rmi listener --force
+    ignore_errors: true
+
   - name: Docker build listener
     docker_image:
       name: listener
@@ -30,7 +35,7 @@
       path: .
 
 #########
-# Too hard to get the realtime stdout from ansible, so I had to run listener from sh script.###
+# Too hard to get realtime stdout from ansible, so I had to run listener from sh script.###
 #
 #  - name: Docker run listener
 #    shell: docker run -v /opt/upload:/opt/upload -d -it listener:latest
