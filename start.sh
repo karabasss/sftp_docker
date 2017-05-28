@@ -13,6 +13,7 @@ else
     exit 1;
 fi
 
-#sudo pip install ansible
+sudo pip install markupsafe
+sudo pip install ansible
 ansible-playbook docker.yml
 
