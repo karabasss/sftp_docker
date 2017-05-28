@@ -38,6 +38,6 @@ upload dir = /opt/upload
    - creates upload dir
    - runs docker container with SFTP
    - removes old listener container (if exists)
-   - builds listener container with dockerfile "listener.df"
+   - builds listener container with dockerfile "listener.df" with listener.py script which does the job
  > start.sh: 
    - run listener container
