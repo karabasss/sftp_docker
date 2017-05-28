@@ -17,7 +17,18 @@
     service: name=docker state=restarted enabled=yes
 
   - name: Create /opt/upload dir
-    file: path=/opt/upload state=directory mode=0666
+    file: path=/opt/upload state=directory mode=0777
 
   - name: Run docker SFTP server
     shell: docker run -p 2222:22 -v /opt/upload:/home/foo/upload -d atmoz/sftp foo:pass
+
+  - name: Docker build listener
+    docker_image:
+      name: "listener"
+      tag: "latest"
+      dockerfile: listener.df
+      state: present
+      force: yes
+
+  - name: Docker run listener
+    shell: docker run -v /opt/upload:/opt/upload -d -t listener:latest
